@@ -26,6 +26,8 @@ c.toRGB()
 [171, 205, 239]
 c.toCMYK()
 [29, 14, 0, 6]
+c.invert()
+[84, 50, 16]
 c.lighter()
 [176, 210, 244]
 c.lighter(3)

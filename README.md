@@ -37,5 +37,11 @@ c.lighter(3)
 [186, 220, 254]
 c.darker()
 [166, 200, 234]
+// random
+color = new Color()
+color.random()
+[155, 103, 219]
+color.random(true)
+"#1A31AF"
 ```
 

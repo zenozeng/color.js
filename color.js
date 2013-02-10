@@ -1,19 +1,24 @@
 // Color.js -- a color operation library
 // Copyright (C) 2013 Zeno Zeng
 // Licesed Under the MIT license
-// Time-stamp: <2013-01-30 22:59:04 Zeno Zeng>
+// Time-stamp: <2013-02-10 14:10:35 Zeno Zeng>
 // Version 0.0.2
 
 function Color(arg0, arg1, arg2, arg3) {
     var r, g, b, c, m, y, k;
     var hexArray = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
-    if(arg3) {
+    if(arg0 === false) {
+        arg0 = 0;
+        arg1 = 0;
+        arg2 = 0;
+    }
+    if(arg3 !== false) {
         // color(c, m, y, k)
         c = arg0;
         m = arg1;
         y = arg2;
         k = arg3;
-    } else if(arg2) {
+    } else if(arg2 !== false) {
         // color(r, g, b)
         r = arg0;
         g = arg1;
@@ -149,5 +154,16 @@ function Color(arg0, arg1, arg2, arg3) {
 
     this.toGBR = function() {
         return [g, b, r];
+    };
+
+    this.random = function(asHex) {
+        r = parseInt(Math.random() * 256);
+        g = parseInt(Math.random() * 256);
+        b = parseInt(Math.random() * 256);
+        if(asHex) {
+            return this.toHEX();
+        } else {
+            return this.toRGB();
+        }
     };
 }
